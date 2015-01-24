@@ -51,4 +51,4 @@ mergedData <- cbind(subjectData,yData,xData)
 
 # New Tidy Data set with averages of each variable for each Activity and each Subject
 NewTidyDataSet <- ddply(mergedData, .(Activity,SubjectID), function(mergedData) colMeans(mergedData[,-c(1,2)]))
-write.csv(NewTidyDataSet, "UCI HAR Tidy Data.csv")
+write.table(NewTidyDataSet, "UCI HAR Tidy Data.txt",row.name=FALSE)
